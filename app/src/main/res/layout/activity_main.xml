@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="128dp"
+    tools:layout_editor_absoluteY="0dp">
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="400dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="174dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image4"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView2"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image2"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView3"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image3"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView4"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image1"
+                android:text="button"
+                android:textSize="0dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView5"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image5"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView6"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image6"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView7"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image7"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView8"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image8"
+                android:textSize="0dp"
+                android:text="button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView9"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image9"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView10"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image10"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView11"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image11"
+                android:text="button"
+                android:textSize="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/imageView12"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/oval"
+                android:onClick="image12"
+                android:text="button"
+                android:textSize="0dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="183dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:text="Match Game"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="26dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="68dp"
+        android:onClick="yenidenOyna"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
