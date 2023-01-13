@@ -3,6 +3,7 @@ package com.example.pairandlearn
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -28,13 +29,13 @@ class MainActivity : AppCompatActivity() {
 
     private var kontrol2 = 0 //hangi resim olduğunu kontrol etmek için
 
-    val images: MutableList<Int> =
-        mutableListOf(cow, elephant,horse, lion, monkey, panda, cow, elephant, horse, lion, monkey, panda)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val images: MutableList<Int> =
+            mutableListOf(cow, elephant,horse, lion, monkey, panda, cow, elephant, horse, lion, monkey, panda)
 
         image1 = findViewById(R.id.imageView)
         image2 = findViewById(R.id.imageView2)
@@ -59,51 +60,37 @@ class MainActivity : AppCompatActivity() {
         var lastClicked = -1
 
         images.shuffle()
-        for(i in 0..11){
-            buttons[i].setBackgroundResource(cardBack)
+        for (i in 0..11) {
             buttons[i].text = "cardBack"
             buttons[i].textSize = 0.0F
             buttons[i].setOnClickListener {
-
                 if (buttons[i].text == "cardBack" && !turnOver) {
-                    Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
                     buttons[i].setBackgroundResource(images[i])
                     buttons[i].setText(images[i])
                     if (clicked == 0) {
-                        Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
-
                         lastClicked = i
                     }
                     clicked++
                 } else if (buttons[i].text !in "cardBack") {
-                    Toast.makeText(this, "3", Toast.LENGTH_SHORT).show()
-
                     buttons[i].setBackgroundResource(cardBack)
                     buttons[i].text = "cardBack"
                     clicked--
                 }
 
+
                 if (clicked == 2) {
-                    Toast.makeText(this, "4" , Toast.LENGTH_SHORT).show()
-                    Handler().postDelayed({buttons[12].setBackgroundResource(cardBack)},400)
                     turnOver = true
                     if (buttons[i].text == buttons[lastClicked].text) {
-                        Toast.makeText(this, "5", Toast.LENGTH_SHORT).show()
-
                         buttons[i].isClickable = false
                         buttons[lastClicked].isClickable = false
                         turnOver = false
                         clicked = 0
                     }
                 } else if (clicked == 0) {
-                    Toast.makeText(this, "6", Toast.LENGTH_SHORT).show()
-
                     turnOver = false
                 }
             }
         }
     }
-    fun yenidenOyna(view: View?) {
-        images.shuffle()
-    }
+
 }
