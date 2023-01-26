@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var image12: Button
     lateinit var yenidenOyna: Button
 
-    lateinit var textview: TextView
+    lateinit var puan: TextView
+    var _number : Int = 0
 
     private var kontrol2 = 0 //hangi resim olduğunu kontrol etmek için
 
@@ -34,6 +35,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        oyun()
+
+
+
+        }
+
+    private fun oyun() {
         val images: MutableList<Int> =
             mutableListOf(cow, elephant,horse, lion, monkey, panda, cow, elephant, horse, lion, monkey, panda)
 
@@ -49,7 +57,8 @@ class MainActivity : AppCompatActivity() {
         image10 = findViewById(R.id.imageView10)
         image11 = findViewById(R.id.imageView11)
         image12 = findViewById(R.id.imageView12)
-
+        yenidenOyna = findViewById(R.id.button3)
+        puan = findViewById(R.id.textView4)
 
         val buttons = arrayOf(image1, image2, image3, image4, image5, image6, image7, image8,
             image9, image10, image11, image12)
@@ -58,39 +67,72 @@ class MainActivity : AppCompatActivity() {
         var clicked = 0
         var turnOver = false
         var lastClicked = -1
-
         images.shuffle()
         for (i in 0..11) {
             buttons[i].text = "cardBack"
             buttons[i].textSize = 0.0F
             buttons[i].setOnClickListener {
+                println("seton"+i)
+                println("turnover" +turnOver)
                 if (buttons[i].text == "cardBack" && !turnOver) {
+                    Toast.makeText(applicationContext, "cardback", Toast.LENGTH_SHORT).show()
                     buttons[i].setBackgroundResource(images[i])
                     buttons[i].setText(images[i])
                     if (clicked == 0) {
+                        Toast.makeText(applicationContext, "clicked 0", Toast.LENGTH_SHORT).show()
                         lastClicked = i
                     }
                     clicked++
-                } else if (buttons[i].text !in "cardBack") {
-                    buttons[i].setBackgroundResource(cardBack)
-                    buttons[i].text = "cardBack"
-                    clicked--
                 }
+                val _number = lastClicked;
 
+                println("ilk baştaki:" + _number )
 
                 if (clicked == 2) {
+                    println("ikinci: " +i)
+                    Toast.makeText(applicationContext, "clicked 2 ise", Toast.LENGTH_SHORT).show()
                     turnOver = true
                     if (buttons[i].text == buttons[lastClicked].text) {
+                        Toast.makeText(applicationContext, "lastclicked", Toast.LENGTH_SHORT).show()
                         buttons[i].isClickable = false
                         buttons[lastClicked].isClickable = false
                         turnOver = false
                         clicked = 0
                     }
+                    else
+                    {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            println("Handler: " +_number)
+                            buttons[_number].setBackgroundResource(cardBack)
+                            buttons[_number].text = "cardBack"
+                            clicked--
+                            buttons[i].setBackgroundResource(cardBack)
+                            buttons[i].text = "cardBack"
+                            clicked--
+                            turnOver = false
+
+                        }, 400)
+                    }
+
                 } else if (clicked == 0) {
+                    Toast.makeText(applicationContext, "clicked 0", Toast.LENGTH_SHORT).show()
                     turnOver = false
                 }
             }
-        }
     }
+
+
+
+        yenidenOyna.setOnClickListener {
+            for (y in 0..11){
+                buttons[y].setBackgroundResource(cardBack)
+                buttons[y].text = "cardBack"
+
+            }
+            oyun()
+        }
+
+    }
+
 
 }
